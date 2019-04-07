@@ -36,7 +36,7 @@ private:
 	int size;
 	int capacity;
 	void deleteStack();
-	void copyStack(const Stack<T> &);
+	void copyStack(const Stack<T> &,const int);
 
 };
 
@@ -53,7 +53,7 @@ Stack<T>::Stack(const int capacity) {
 template<typename T>
 Stack<T>::Stack(const Stack & other) {
 
-		copyStack(other);
+		copyStack(other,other.capacity);
 	
 }
 
@@ -69,9 +69,9 @@ T Stack<T>::top() {
 template<typename T>
 void Stack<T>::push(const T & value) {
 	if (size == capacity) {
-		delete[] arr;
-		capacity = 2 * capacity;
-		arr = new T[capacity];
+		Stack<T> temp(*this);
+		deleteStack();
+		copyStack(temp, temp.capacity + 1);
 	}
 	arr[size] = value;
 	++size;
@@ -92,14 +92,15 @@ void Stack<T>::testPrint() {
 		std::cout << "Index is: " << i << " Value is: " << arr[i] << std::endl;
 	}
 	std::cout << "Size is: " << size << std::endl;
+	std::cout << "Capacity is: " << capacity << std::endl;
 }
 
 
 template<typename T>
-void Stack<T>::copyStack(const Stack<T> & other) {
+void Stack<T>::copyStack(const Stack<T> & other,const int maxCapacity) {
 	
 	this->size = other.size;
-	this->capacity = other.capacity;
+	this->capacity = maxCapacity;
 	this->arr = new T[this->capacity];
 	for (int i = 0;i < this->size;++i) {
 		this->arr[i] = other.arr[i];
@@ -118,7 +119,7 @@ template<typename T>
 Stack<T> & Stack<T>::operator=(const Stack<T> &other) {
 	if (this != &other) {
 		deleteStack();
-		copyStack(other);
+		copyStack(other,other.capacity);
 	}
 	return *this;
 

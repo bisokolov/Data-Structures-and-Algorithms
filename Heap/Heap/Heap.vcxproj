@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B21A71A6-9E97-4AEC-9DEF-990E82D214A1}</ProjectGuid>
+    <ProjectGuid>{BC958E30-E7E0-452E-AFD2-373CC0B8DC6E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ArrayBasedStack</RootNamespace>
+    <RootNamespace>Heap</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,11 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="stackImplementation.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayBasedStack.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
