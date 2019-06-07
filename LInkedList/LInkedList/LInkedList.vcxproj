@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E36E922F-9756-41D5-9ECD-4BC58B5FBF7C}</ProjectGuid>
+    <ProjectGuid>{E195F1C7-304D-4BFC-B7AC-339D1902333E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>GraphBFSDFS</RootNamespace>
+    <RootNamespace>LInkedList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,12 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GraphBFSDFS.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GraphBFSDFS.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="LInkedList.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
